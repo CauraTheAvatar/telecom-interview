@@ -1,0 +1,134 @@
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header Styles */
+
+header {
+    background-color: #2ecc71;
+    padding: 1em;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: #ccc;
+}
+
+header .hamburger {
+    display: none;
+}
+
+/* Navigation Menu Styles */
+
+header nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #2ecc71;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+header nav ul li:hover ul {
+    display: block;
+}
+
+header nav ul li ul li {
+    margin-right: 0;
+}
+
+header nav ul li ul li a {
+    color: #fff;
+}
+
+header nav ul li ul li a:hover {
+    color: #ccc;
+}
+
+/* RESPONSIVE STYLE */
+
+/* Tablet View */
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        margin-right: 0;
+    }
+    header .hamburger {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    header .hamburger span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin-bottom: 5px;
+    }
+    header nav ul {
+        display: none;
+    }
+}
+
+/* Mobile View */
+
+@media (max-width: 480px) {
+    main section {
+        padding: 20px;
+    }
+    footer {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+/* Active Hamburger Menu Styles */
+
+.hamburger.active span {
+    background-color: #ccc;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
